@@ -1,5 +1,8 @@
 package anurag.blind75.array;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class _1_two_sum {
     public static void main(String... args){
         int[] nums={2,7,11,15};
@@ -12,8 +15,10 @@ public class _1_two_sum {
 
         int[] result1 = bruteForce1(nums, target);
         int[] result2 = bruteForce2(nums, target);
+        int[] result3 = hashmapResult(nums, target);
         System.out.println("Result 1= ["+result1[0]+", "+result1[1]+"]");
         System.out.println("Result 2= ["+result2[0]+", "+result2[1]+"]");
+        System.out.println("Result 3= ["+result3[0]+", "+result3[1]+"]");
 
     }
 
@@ -39,6 +44,18 @@ public class _1_two_sum {
             }
         }
         System.out.println("Target is not present in the list");
+        return new int[]{};
+    }
+
+    public static int[] hashmapResult(int[] nums, int target){
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i=0; i<nums.length; i++){
+            int diff=target-nums[i];
+            if(map.containsKey(diff)){
+                return new int[]{map.get(diff), i};
+            }
+            map.put(nums[i],i);
+        }
         return new int[]{};
     }
 

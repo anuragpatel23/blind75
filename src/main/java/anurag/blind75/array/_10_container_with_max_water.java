@@ -4,7 +4,9 @@ public class _10_container_with_max_water {
     public static void main(String... args){
         int[] nums= {1,8,6,2,5,4,8,3,7};
         int result1=maxWaterBrutForce(nums);
+        int result2=maxWaterTwoPointer(nums);
         System.out.println(result1);
+        System.out.println(result2);
     }
 
     private static int maxWaterBrutForce(int[] height){
@@ -21,4 +23,22 @@ public class _10_container_with_max_water {
         return max;
     }
 
+    private static int maxWaterTwoPointer(int[] height) {
+        int max=0;
+        int left=0;
+        int right=height.length-1;
+        while(left<right){
+            int width= right-left;
+            int area=Math.min(height[left], height[right])*width;
+
+            max=Math.max(max, area);
+
+            if(height[left]<=height[right]){
+                left++;
+            }else{
+                right--;
+            }
+        }
+        return max;
+    }
 }

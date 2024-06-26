@@ -19,17 +19,25 @@ public class Solution {
         System.out.println(result4);
     }
 
-    private static String callSolution(String str){
-        String s1=str.substring(3);
-        String[] r = s1.split("");
+    private static String callSolution(String s){
+        String str=s.substring(3);
         StringBuffer sb = new StringBuffer();
-        sb.append(s1.charAt(0));
-        for(int i=1; i<r.length; i++){
-            if(Character.isUpperCase(s1.charAt(i)) && Character.isLowerCase(s1.charAt(i-1))){
+        sb.append(str.charAt(0));
+        for(int i=1; i<str.length(); i++){
+            if(i==str.length()-1){
+                continue;
+            }else if(Character.isUpperCase(str.charAt(i)) &&
+                    Character.isLowerCase(str.charAt(i+1)) &&
+                    Character.isUpperCase(str.charAt(i-1))){
+                sb.append("_");
+            }else if(Character.isUpperCase(str.charAt(i)) &&
+                    Character.isLowerCase(str.charAt(i-1)) &&
+                    Character.isLowerCase(str.charAt(i+1))){
                 sb.append("_");
             }
-            sb.append(s1.charAt(i));
+            sb.append(str.charAt(i));
         }
+        sb.append(str.charAt(str.length()-1));
         return sb.toString();
     }
 

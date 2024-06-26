@@ -19,26 +19,27 @@ public class Solution {
         System.out.println(result4);
     }
 
-    private static String callSolution(String s){
-        String str=s.substring(3);
-        StringBuffer sb = new StringBuffer();
-        sb.append(str.charAt(0));
-        for(int i=1; i<str.length(); i++){
-            if(i==str.length()-1){
-                continue;
-            }else if(Character.isUpperCase(str.charAt(i)) &&
-                    Character.isLowerCase(str.charAt(i+1)) &&
-                    Character.isUpperCase(str.charAt(i-1))){
-                sb.append("_");
-            }else if(Character.isUpperCase(str.charAt(i)) &&
-                    Character.isLowerCase(str.charAt(i-1)) &&
-                    Character.isLowerCase(str.charAt(i+1))){
-                sb.append("_");
+    private static String callSolution(String getterName){
+        String result = getterName.replaceFirst("get","");
+        int index =0;
+
+        StringBuilder finalResult= new StringBuilder();
+        char finalResultChar;
+
+        for ( char i : result.toCharArray() ) {
+            if( index > 0 && index < (result.length() - 1) &&
+                    ( (Character.isUpperCase(result.charAt(index)) &&
+                            Character.isLowerCase(result.charAt(index-1) ) ) ||
+                            Character.isUpperCase(result.charAt(index)) &&
+                            Character.isLowerCase(result.charAt(index+1) ))){
+                finalResultChar = '_';
+                finalResult.append(finalResultChar);
             }
-            sb.append(str.charAt(i));
+            finalResult.append(i);
+            index++;
         }
-        sb.append(str.charAt(str.length()-1));
-        return sb.toString();
+
+        return finalResult.toString();
     }
 
     private static String callSolution1(String str){

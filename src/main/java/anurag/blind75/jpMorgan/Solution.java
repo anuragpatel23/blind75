@@ -12,7 +12,6 @@ public class Solution {
         String result2=callSolution(str2);
         String result3=callSolution(str3);
         String result4=callSolution(str4);
-
         System.out.println(result1);
         System.out.println(result2);
         System.out.println(result3);
@@ -25,7 +24,6 @@ public class Solution {
 
         StringBuilder finalResult= new StringBuilder();
         char finalResultChar;
-
         for ( char i : result.toCharArray() ) {
             if( index > 0 && index < (result.length() - 1) &&
                     ( (Character.isUpperCase(result.charAt(index)) &&

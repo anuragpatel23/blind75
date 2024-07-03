@@ -8,7 +8,7 @@ public class _10_container_with_max_water {
         System.out.println(result1);
         System.out.println(result2);
     }
-
+    
     private static int maxWaterBrutForce(int[] height){
         int max=1;
         for(int i=0; i<height.length; i++){
@@ -30,7 +30,6 @@ public class _10_container_with_max_water {
         while(left<right){
             int width= right-left;
             int area=Math.min(height[left], height[right])*width;
-
             max=Math.max(max, area);
 
             if(height[left]<=height[right]){

@@ -12,7 +12,6 @@ public class _3_rotate_image {
             System.out.println(b);
             }
         }
-
     }
 
     private static int[][] rotate(int[][] matrix) {

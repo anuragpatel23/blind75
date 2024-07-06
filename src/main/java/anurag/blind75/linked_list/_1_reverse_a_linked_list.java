@@ -10,21 +10,17 @@ public class _1_reverse_a_linked_list {
         head.val=4;
         head.val=5;
         ListNode result = reverseList(head);
-
     }
     public static ListNode reverseList(ListNode head) {
-
         ListNode prev = null;
         ListNode curr = head;
 
         while(curr!= null){
-
             ListNode temp = curr.next;
             curr.next = prev;
             prev= curr;
             curr = temp;
         }
-
         return prev;
 
     }

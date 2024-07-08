@@ -18,7 +18,6 @@ public class _202_happy_number {
         seen.add(n);
         n = getNextHappyNumber(n);
     }
-
         return n == 1;
 
 }

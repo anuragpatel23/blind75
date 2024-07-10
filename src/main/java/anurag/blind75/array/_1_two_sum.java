@@ -19,7 +19,6 @@ public class _1_two_sum {
         System.out.println("Result 1= ["+result1[0]+", "+result1[1]+"]");
         System.out.println("Result 2= ["+result2[0]+", "+result2[1]+"]");
         System.out.println("Result 3= ["+result3[0]+", "+result3[1]+"]");
-
     }
 
     public static int[] bruteForce1(int[] nums, int target){

@@ -10,7 +10,6 @@ public class _1598_crawler_log_folder {
         System.out.println(res1);
         System.out.println(res2);
     }
-
     private static int minOperations1(String[] logs){
         String same="./";
         String back="../";
@@ -43,7 +42,6 @@ public class _1598_crawler_log_folder {
                 depth++;
             }
         }
-
         return depth;
     }
 }

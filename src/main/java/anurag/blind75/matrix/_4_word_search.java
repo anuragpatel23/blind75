@@ -1,7 +1,6 @@
 package anurag.blind75.matrix;
 
 public class _4_word_search {
-
     public static void main(String... args){
         char[][] board = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
         String word = "ABCCED";
@@ -10,8 +9,6 @@ public class _4_word_search {
 
         System.out.println("result : "+result );
     }
-
-
 }
 
 class Solution{

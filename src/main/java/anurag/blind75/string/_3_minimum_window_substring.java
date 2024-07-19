@@ -53,7 +53,7 @@ public class _3_minimum_window_substring {
 
         if(result[0] == -1){
             return "";
-        }else{
+        } else{
             return s.substring(result[1], result[2]+1);
         }
     }

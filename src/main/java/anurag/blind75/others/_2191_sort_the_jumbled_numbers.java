@@ -11,7 +11,6 @@ public class _2191_sort_the_jumbled_numbers {
         int[] result = sortJumbled(mapping, nums);
 
     }
-
     private static int[] sortJumbled(int[] mapping, int[] nums) {
         int length = nums.length;
         List<int[]> list= new ArrayList<>();
